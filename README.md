@@ -11,8 +11,7 @@ to be parsed with ease and includes data extraction and interpretation models, p
 * [Installation](#installation)
 * [Minimal example](#minimal-example)
 * [Getting started](#getting-started)
-* [Implemented models](#implemented-models)
-* [Citing pke](#citing-pke)
+* [Documentation](#documentation)
 
 ## Installation
 
