@@ -5,3 +5,19 @@ provides an end-to-end pipeline in which each component can
 be easily modified or extended to develop new models. `rpi` also allows rolimon's api 
 to be parsed with ease and includes data extraction and interpretation models, provided by 
 [rolimon's private api](http://rolimons.com).
+
+## Table of Contents
+
+* [Installation](#installation)
+* [Minimal example](#minimal-example)
+* [Getting started](#getting-started)
+* [Implemented models](#implemented-models)
+* [Citing pke](#citing-pke)
+
+## Installation
+
+To pip install `rpi` from github:
+
+```bash
+pip install git+https://github.com/AcierP/rpi.git
+```
