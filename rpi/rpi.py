@@ -1,6 +1,9 @@
-import requests, json
+import requests, json, string
 class RPI:
-    def getValue(assetid, proxy=None):
+    def getValue(item, proxy=None):
+        if not item.isdigit():
+            pass
+            #id to name here
         if proxy == None:
             itemdetails = requests.get("https://www.rolimons.com/itemapi/itemdetails")
             print(itemdetails.text)
@@ -16,7 +19,7 @@ class RPI:
                     raise ConnectionError("Proxy format " + proxytype + " is not supported")
                 else:
                     raise ConnectionError("Proxy format is unknown or unsupported")
-    def idtoName(assetid, proxy=None):
+    def idtoName(item, proxy=None):
         if proxy == None:
             itemdetails = requests.get("https://www.rolimons.com/itemapi/itemdetails")
             print(itemdetails.text)
@@ -33,4 +36,4 @@ class RPI:
                 else:
                     raise ConnectionError("Proxy format is unknown or unsupported")
 
-value = RPI.getValue('1111', proxy='http://hihihi')
+#value = RPI.getValue('1111', proxy='http://hihihi')
