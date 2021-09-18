@@ -12,9 +12,7 @@ class RPI:
                 total.append(itemdetails.json()['items'][str(itemobj)][0])
             return total
             
-    def getValue(item, proxy=None):
-        if not item.isdigit():
-            pass    
+    def getValue(item, proxy=None): 
         itemdetails = requests.get("https://www.rolimons.com/itemapi/itemdetails")
         itemcheck = itemdetails.json()['items'][str(item)][3]
 
@@ -65,17 +63,9 @@ class RPI:
                 rtn[itemcheck] = {'name': itemdetails.json()['items'][str(itemcheck)][0], 'acronym': itemdetails.json()['items'][str(itemcheck)][1], 'rap': itemdetails.json()['items'][str(itemcheck)][2], 'value': val, 'default_value': defaultval, 'demand': demandcheck[itemdetails.json()['items'][str(itemcheck)][5]], 'trend': trends[itemdetails.json()['items'][str(itemcheck)][6]], 'projected': boolcheck[itemdetails.json()['items'][str(itemcheck)][7]], 'hyped': boolcheck[itemdetails.json()['items'][str(itemcheck)][8]], 'rare': boolcheck[itemdetails.json()['items'][str(itemcheck)][9]]}
             return rtn
 
-
-    def getcatalogAtrributes():
-        pass
-
     def getcatalogCount():
         return requests.get('https://www.rolimons.com/itemapi/itemdetails').json()['item_count']
 
+itemdetails = RPI.getitemAttributes(21070012)
 
-
-itemdata = []
-
-catalog = RPI.getlimitedsCatalog(format='id')
-
-print(RPI.getitemAttributes(catalog))
+print(itemdetails['name'], itemdetails['acronym'], itemdetails['value'], itemdetails['demand'], itemdetails['trend'])
