@@ -65,7 +65,3 @@ class RPI:
 
     def getcatalogCount():
         return requests.get('https://www.rolimons.com/itemapi/itemdetails').json()['item_count']
-
-itemdetails = RPI.getitemAttributes(21070012)
-
-print(itemdetails['name'], itemdetails['acronym'], itemdetails['value'], itemdetails['demand'], itemdetails['trend'])
