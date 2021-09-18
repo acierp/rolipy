@@ -35,11 +35,12 @@ itemdata = []
 
 catalog = rpi.getlimitedsCatalog(format='id')
 
-print(rpi.getitemAttributes(catalog))
+catalogatrributes = rpi.getitemAttributes(catalog))
 ```
 ### Getting the value, demand, acronym, and trend of an item
 ```python
 import rpi
 itemdetails = rpi.getitemAttributes(21070012)
 
-print(itemdetails['name'], itemdetails['acronym'], itemdetails['value'], itemdetails['demand'], itemdetails['trend'])
+itematrributes = itemdetails['name'], itemdetails['acronym'], itemdetails['value'], itemdetails['demand'], itemdetails['trend']
+```
