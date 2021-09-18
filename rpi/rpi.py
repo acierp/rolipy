@@ -1,7 +1,50 @@
 import requests, json, string
 class RPI:
-    def getlimitedsCatalog(item, format=None):
-        pass
+    def getlimitedsCatalog(format=None, proxy=None):
+        total = []
+
+        if format == None:
+            format = 'id'
+
+        if proxy == None:
+            itemdetails = requests.get("https://www.rolimons.com/itemapi/itemdetails")
+            if format == 'id':
+                for itemobj in itemdetails.json()['items']:
+                    total.append(itemobj)
+                return total
+            elif format == 'name':
+                for itemobj in itemdetails.json()['items']:
+                    total.append(itemdetails.json()['items'][str(itemobj)][0])
+                return total
+        else: 
+            if proxy.startswith("https://"):
+                itemdetails = requests.get("https://www.rolimons.com/itemapi/itemdetails", proxies = {"https": proxy})
+                if format == 'id':
+                    for itemobj in itemdetails.json()['items']:
+                        total.append(itemobj)
+                    return total
+                elif format == 'name':
+                    for itemobj in itemdetails.json()['items']:
+                        total.append(itemdetails.json()['items'][str(itemobj)][0])
+                    return total
+                pass
+            elif proxy.startswith("http://") or proxy.startswith('socks5://'):
+                itemdetails = requests.get("https://www.rolimons.com/itemapi/itemdetails", proxies = {"http": proxy})
+                if format == 'id':
+                    for itemobj in itemdetails.json()['items']:
+                        total.append(itemobj)
+                    return total
+                elif format == 'name':
+                    for itemobj in itemdetails.json()['items']:
+                        total.append(itemdetails.json()['items'][str(itemobj)][0])
+                    return total
+            else:
+                if "://" in proxy:
+                    proxytype = proxy.split('://')[0]
+                    raise ConnectionError("Proxy format " + proxytype + " is not supported")
+                else:
+                    raise ConnectionError("Proxy format is unknown or unsupported")
+            
 
     def getValue(item, proxy=None):
         if not item.isdigit():
@@ -56,5 +99,4 @@ class RPI:
                 else:
                     raise ConnectionError("Proxy format is unknown or unsupported")
 
-value = RPI.getValue('')
-print(value)
+print(RPI.getlimitedsCatalog(format='name'))
