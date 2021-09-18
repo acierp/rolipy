@@ -20,3 +20,18 @@ To pip install `rpi` from github:
 ```bash
 pip install git+https://github.com/AcierP/rpi.git
 ```
+
+## Examples
+
+### Getting an item's value
+```python
+import rpi
+value = RPI.getValue(21070012)
+```
+### Getting the item attributes to every item on the catalog
+```python
+itemdata = []
+
+catalog = RPI.getlimitedsCatalog(format='id')
+
+print(RPI.getitemAttributes(catalog))```
