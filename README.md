@@ -9,7 +9,7 @@ to be parsed with ease and includes data extraction and interpretation models, p
 ## Table of Contents
 
 * [Installation](#installation)
-* [Minimal example](#minimal-example)
+* [Examples](#Examples)
 * [Getting started](#getting-started)
 * [Documentation](#documentation)
 
@@ -19,4 +19,28 @@ To pip install `rpi` from github:
 
 ```bash
 pip install git+https://github.com/AcierP/rpi.git
+```
+
+## Examples
+
+### Getting an item's value
+```python
+import rpi
+value = rpi.getValue(21070012)
+```
+### Getting the item attributes to every item on the catalog
+```python
+import rpi
+itemdata = []
+
+catalog = rpi.getlimitedsCatalog(format='id')
+
+catalogatrributes = rpi.getitemAttributes(catalog))
+```
+### Getting the value, demand, acronym, and trend of an item
+```python
+import rpi
+itemdetails = rpi.getitemAttributes(21070012)
+
+itematrributes = itemdetails['name'], itemdetails['acronym'], itemdetails['value'], itemdetails['demand'], itemdetails['trend']
 ```
