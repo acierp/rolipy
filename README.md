@@ -1,4 +1,4 @@
-# `rolipy` - rolimon's python interaction
+# `rolipy`
 
 `rolipy` is an **open source** python-based **rolimon's api wrapper** 
 [rolimon's private api](http://rolimons.com).
