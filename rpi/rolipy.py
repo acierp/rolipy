@@ -1,5 +1,5 @@
 import requests, json, string
-class RPI:
+class rolipy:
     def getlimitedsCatalog(format=None):
         total = []
         itemdetails = requests.get("https://www.rolimons.com/itemapi/itemdetails")
