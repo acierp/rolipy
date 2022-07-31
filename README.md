@@ -1,6 +1,6 @@
-# `pyrolimons` - rolimon's python interaction
+# `rolipy` - rolimon's python interaction
 
-`pyrolimons` is an **open source** python-based **rolimon's api wrapper** 
+`rolipy` is an **open source** python-based **rolimon's api wrapper** 
 [rolimon's private api](http://rolimons.com).
 
 ## Table of Contents
@@ -14,19 +14,19 @@
 
 ### Getting an item's value
 ```python
-value = pyrolimons.getValue(21070012)
+value = rolipy.getValue(21070012)
 ```
 ### Getting the item attributes to every item on the catalog
 ```python
 itemdata = []
 
-catalog = pyrolimons.getlimitedsCatalog(format='id')
+catalog = rolipy.getlimitedsCatalog(format='id')
 
-catalogatrributes = pyrolimons.getitemAttributes(catalog))
+catalogatrributes = rolipy.getitemAttributes(catalog))
 ```
 ### Getting the value, demand, acronym, trend, projected status, and hyped status of an item
 ```python
-details = pyrolimons.getitemAttributes(21070012)
+details = rolipy.getitemAttributes(21070012)
 
 itemattributes = details['name'], details['acronym'], details['value'], details['demand'], details['trend'], details['projected'], details['hyped'])
 ```
